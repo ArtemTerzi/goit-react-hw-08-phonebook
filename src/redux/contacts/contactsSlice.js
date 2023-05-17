@@ -12,7 +12,6 @@ const handleFulfilled = (state, { payload }) => {
 };
 
 const handleRejected = (state, { error: { message } }) => {
-  console.log(message);
   state.error = `Something gone wrong, we think the problem is: ${message}.`;
   state.isLoading = false;
 };

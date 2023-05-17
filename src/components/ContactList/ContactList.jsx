@@ -6,9 +6,9 @@ import {
   selectErrorStatus,
   selectFilter,
   selectLoadingStatus,
-} from 'redux/selectors';
+} from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/operation';
+import { deleteContact, fetchContacts } from 'redux/contacts/operation';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
