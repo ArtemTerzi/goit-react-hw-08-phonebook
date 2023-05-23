@@ -20,12 +20,12 @@ const SignUpForm = () => {
   return (
     <>
       <form onSubmit={handleSumbit}>
-        <label htmlFor="">Email</label>
-        <input type="email" name="email" />
-        <label htmlFor="">User Name</label>
-        <input type="text" name="name" />
-        <label htmlFor="">Password</label>
-        <input type="password" name="password" />
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label htmlFor="name">User Name</label>
+        <input type="text" name="name" id="name" />
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" id="password" />
         <button type="submit">Register Now</button>
       </form>
     </>

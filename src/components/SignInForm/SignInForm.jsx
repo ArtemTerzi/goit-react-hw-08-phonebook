@@ -7,21 +7,21 @@ const SignInForm = () => {
   const handleSumbit = e => {
     e.preventDefault();
 
-    const user = {
-      email: e.currentTarget.email.value,
-      password: e.currentTarget.password.value,
-    };
-    console.log(user);
-    dispatch(signIn(user));
+    dispatch(
+      signIn({
+        email: e.currentTarget.email.value,
+        password: e.currentTarget.password.value,
+      })
+    );
   };
 
   return (
     <>
       <form onSubmit={handleSumbit}>
-        <label htmlFor="">Email</label>
-        <input type="email" name="email" />
-        <label htmlFor="">Password</label>
-        <input type="password" name="password" />
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" id="password" />
         <button type="submit">Login</button>
       </form>
     </>

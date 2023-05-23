@@ -1,8 +1,13 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header, NavList, Navlink } from './SharedLayout.styled';
+import UserMenu from 'components/UserMenu/UserMenu';
+import { useAuth } from 'hooks/useAuth';
+import AuthNav from 'components/AuthNav';
 
 const SharedLayout = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <>
       <Header>
@@ -14,14 +19,9 @@ const SharedLayout = () => {
             <li>
               <Navlink to="/contacts"> Contacts</Navlink>
             </li>
-            <li>
-              <Navlink to="/register"> Sign Up</Navlink>
-            </li>
-            <li>
-              <Navlink to="/login"> Sign In</Navlink>
-            </li>
           </NavList>
         </nav>
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </Header>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />

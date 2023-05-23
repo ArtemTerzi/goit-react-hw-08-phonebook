@@ -34,7 +34,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (contacts.some(contact => contact.name === name)) alertmessage(name);
-    else addContact({ name, phone: number });
+    else addContact({ name, number });
 
     setName('');
     setNumber('');

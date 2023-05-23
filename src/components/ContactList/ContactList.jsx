@@ -30,16 +30,24 @@ export const ContactList = () => {
       contact.name.toLowerCase().includes(getFilterNormalize())
     );
 
+  getFilteredContacts();
+
   return (
     <Contacts>
+      {contacts.length === 0 && (
+        <b>
+          There are no contacts to display. <br /> Use the form above to add
+          contacts to your phone book.
+        </b>
+      )}
       {(isLoading && !error && <b>Request in progress...</b>) ||
         (error && <b>{error}</b>) ||
-        getFilteredContacts().map(({ id, name, phone }) => (
+        getFilteredContacts().map(({ id, name, number }) => (
           <ContactItem
             name={name}
             key={id}
             id={id}
-            number={phone}
+            number={number}
             removeContact={removeContact}
           />
         ))}
