@@ -13,6 +13,7 @@ export const ContactItem = ({ name, id, number, removeContact }) => {
         onClick={() => removeContact(id)}
         id={id}
         ml={2}
+        fontFamily="Shrikhand"
       >
         Delete
       </Button>

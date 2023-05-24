@@ -68,7 +68,13 @@ const ContactForm = () => {
         onChange={handleChange}
         value={number}
       />
-      <Button colorScheme="pink" variant="outline" type="submit" mt="2">
+      <Button
+        colorScheme="pink"
+        variant="outline"
+        type="submit"
+        mt="2"
+        fontFamily="Shrikhand"
+      >
         Add to contact
       </Button>
     </ContactFormWrapper>

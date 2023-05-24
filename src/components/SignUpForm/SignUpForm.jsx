@@ -66,7 +66,12 @@ const SignUpForm = () => {
             isRequired
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button
+              fontFamily="Shrikhand"
+              h="1.75rem"
+              size="sm"
+              onClick={handleClick}
+            >
               {show ? 'Hide' : 'Show'}
             </Button>
           </InputRightElement>
@@ -77,6 +82,7 @@ const SignUpForm = () => {
           display="block"
           m="12px auto"
           type="submit"
+          fontFamily="Shrikhand"
         >
           Register Now
         </Button>
