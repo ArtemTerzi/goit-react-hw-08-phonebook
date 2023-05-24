@@ -20,6 +20,7 @@ export const Navlink = styled(NavLink)`
   font-size: 24px;
   font-weight: 700;
   color: hotpink;
+  font-family: 'Shrikhand';
 
   &.active {
     color: royalblue;
