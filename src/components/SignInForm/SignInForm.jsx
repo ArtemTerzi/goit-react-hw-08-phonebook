@@ -1,7 +1,6 @@
 import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { signIn } from 'redux/auth/operations';
 import { Form, FormTitle, LoginLink } from './SignInForm.styled';
 
@@ -9,8 +8,6 @@ const SignInForm = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
-
-  const navigate = useNavigate();
 
   const handleSumbit = e => {
     e.preventDefault();
@@ -73,9 +70,7 @@ const SignInForm = () => {
         >
           Login
         </Button>
-        <LoginLink onClick={() => navigate('/register')}>
-          Create new account
-        </LoginLink>
+        <LoginLink to={'/register'}>Create new account</LoginLink>
       </Form>
     </>
   );

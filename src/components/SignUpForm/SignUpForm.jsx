@@ -3,11 +3,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { Form, FormTitle, LoginLink } from './SignUpForm.styled';
-import { useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
 
@@ -87,13 +85,7 @@ const SignUpForm = () => {
           Register Now
         </Button>
 
-        <LoginLink
-          onClick={() => {
-            navigate('/login');
-          }}
-        >
-          Already have an account?
-        </LoginLink>
+        <LoginLink to={'/login'}>Already have an account?</LoginLink>
       </Form>
     </>
   );

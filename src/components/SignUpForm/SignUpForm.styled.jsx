@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Form = styled.form`
   max-width: 440px;
@@ -15,7 +16,8 @@ export const FormTitle = styled.h2`
   margin-bottom: 20px;
 `;
 
-export const LoginLink = styled.p`
+export const LoginLink = styled(Link)`
+  display: block;
   font-size: 16px;
   font-weight: 600;
   color: hotpink;
