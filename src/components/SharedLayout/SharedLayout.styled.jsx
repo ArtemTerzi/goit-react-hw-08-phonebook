@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
-  border-bottom: 1px solid darkslategrey;
-  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  border-bottom: 1px solid hotpink;
 `;
 
 export const NavList = styled.ul`
@@ -17,15 +19,15 @@ export const Navlink = styled(NavLink)`
   text-decoration: none;
   font-size: 24px;
   font-weight: 700;
-  color: black;
+  color: hotpink;
 
   &.active {
-    color: coral;
-    border-bottom: 1px solid coral;
+    color: royalblue;
+    border-bottom: 1px solid royalblue;
   }
 
   &:hover,
   &:focus {
-    color: red;
+    color: blue;
   }
 `;

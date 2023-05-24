@@ -2,6 +2,10 @@ import styled from '@emotion/styled';
 
 export const Contact = styled.li`
   margin-bottom: 4px;
+
+  &::before {
+    content: '⍟ ';
+  }
 `;
 
 export const ContactBtn = styled.button`

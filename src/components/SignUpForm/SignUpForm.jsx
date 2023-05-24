@@ -1,9 +1,15 @@
-import React from 'react';
+import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { Form, FormTitle, LoginLink } from './SignUpForm.styled';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
 
   const handleSumbit = e => {
     e.preventDefault();
@@ -19,15 +25,70 @@ const SignUpForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSumbit}>
+      <Form onSubmit={handleSumbit}>
+        <FormTitle>
+          Sign up <br />
+          It's quick and easy.
+        </FormTitle>
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <Input
+          border="1px solid grey"
+          mb="2"
+          focusBorderColor="pink.400"
+          pr="1.5rem"
+          placeholder="Enter email"
+          type="email"
+          name="email"
+          id="email"
+          isRequired
+        />
         <label htmlFor="name">User Name</label>
-        <input type="text" name="name" id="name" />
+        <Input
+          focusBorderColor="pink.400"
+          pr="1.5rem"
+          mb="2"
+          placeholder="Enter username"
+          type="text"
+          name="name"
+          id="name"
+          isRequired
+        />
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <button type="submit">Register Now</button>
-      </form>
+        <InputGroup size="md">
+          <Input
+            border="1px solid grey"
+            focusBorderColor="pink.400"
+            pr="1.5rem"
+            type={show ? 'text' : 'password'}
+            placeholder="Enter password"
+            name="password"
+            id="password"
+            isRequired
+          />
+          <InputRightElement width="4.5rem">
+            <Button h="1.75rem" size="sm" onClick={handleClick}>
+              {show ? 'Hide' : 'Show'}
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+        <Button
+          colorScheme="blue"
+          variant="outline"
+          display="block"
+          m="12px auto"
+          type="submit"
+        >
+          Register Now
+        </Button>
+
+        <LoginLink
+          onClick={() => {
+            navigate('/login');
+          }}
+        >
+          Already have an account?
+        </LoginLink>
+      </Form>
     </>
   );
 };

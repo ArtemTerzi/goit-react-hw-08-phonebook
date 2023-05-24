@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import {
-  ContactFormWrapper,
-  FormLabel,
-  FormInput,
-  FormButton,
-} from './ContactForm.styled';
+import { ContactFormWrapper, FormLabel } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { createContact } from 'redux/contacts/operation';
+import { Button, Input } from '@chakra-ui/react';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -45,7 +41,10 @@ const ContactForm = () => {
   return (
     <ContactFormWrapper onSubmit={onAddToContactSubmit}>
       <FormLabel htmlFor="name">Name</FormLabel>
-      <FormInput
+      <Input
+        focusBorderColor="blue.400"
+        pr="4.5rem"
+        placeholder="Enter name"
         type="text"
         id="name"
         name="name"
@@ -56,7 +55,10 @@ const ContactForm = () => {
         value={name}
       />
       <FormLabel htmlFor="tel">Number</FormLabel>
-      <FormInput
+      <Input
+        focusBorderColor="blue.400"
+        pr="4.5rem"
+        placeholder="Enter number"
         type="tel"
         id="tel"
         name="number"
@@ -66,7 +68,9 @@ const ContactForm = () => {
         onChange={handleChange}
         value={number}
       />
-      <FormButton type="submit">Add to contact</FormButton>
+      <Button colorScheme="pink" variant="outline" type="submit" mt="2">
+        Add to contact
+      </Button>
     </ContactFormWrapper>
   );
 };

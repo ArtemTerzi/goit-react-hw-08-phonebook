@@ -30,8 +30,6 @@ export const ContactList = () => {
       contact.name.toLowerCase().includes(getFilterNormalize())
     );
 
-  getFilteredContacts();
-
   return (
     <Contacts>
       {contacts.length === 0 && (

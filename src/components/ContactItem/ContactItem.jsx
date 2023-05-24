@@ -1,14 +1,24 @@
 import PropTypes from 'prop-types';
-import { Contact, ContactBtn } from './ContactItem.styled';
+import { Contact } from './ContactItem.styled';
+import { Button } from '@chakra-ui/react';
 
-export const ContactItem = ({ name, id, number, removeContact }) => (
-  <Contact name="contact">
-    {name}: {number}
-    <ContactBtn type="button" onClick={() => removeContact(id)} id={id}>
-      Delete
-    </ContactBtn>
-  </Contact>
-);
+export const ContactItem = ({ name, id, number, removeContact }) => {
+  return (
+    <Contact name="contact">
+      {name}: {number}
+      <Button
+        colorScheme="blue"
+        variant="outline"
+        type="submit"
+        onClick={() => removeContact(id)}
+        id={id}
+        ml={2}
+      >
+        Delete
+      </Button>
+    </Contact>
+  );
+};
 
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
